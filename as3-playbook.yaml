@@ -1,0 +1,24 @@
+---
+- name: DEPLOY AS3 DECLARATION
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars:
+
+  vars_files:
+
+  tasks:
+
+  - name: Create a FilmApp
+    uri:
+      url: https://18.168.126.166/mgmt/shared/appsvcs/declare
+      user: "admin"
+      password: "Coda1812riseyuck"
+      method: POST
+      body: "{{ lookup('file','./empty.json') }}"
+      body_format: json
+      force_basic_auth: yes
+      status_code: 200
+      validate_certs: no
+...
